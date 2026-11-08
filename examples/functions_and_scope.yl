@@ -1,0 +1,45 @@
+<<"" ========================================================
+   Yalu Example: Functions and Scope Management
+   Demonstrating parameters, defaults, closures, rt
+   ======================================================== "">>
+
+base_multiplier = 10
+
+fn make_adder !!<addend: 5>>!! ::
+    fn adder !!<x>>!! ::
+        rt x + addend
+    ::
+    rt adder
+::
+
+fn calculate_total !!<price, tax_rate: 0.08, discount: 0>>!! ::
+    subtotal = price - discount
+    total = subtotal + (subtotal * tax_rate)
+    rt total
+::
+
+pr "=== Standard function call with default arguments ==="
+t1 = calculate_total(100)
+pr "Price 100 with default 8% tax: /#t1"
+
+t2 = calculate_total(100, 0.15, 10)
+pr "Price 100 with 15% tax and 10 discount: /#t2"
+
+pr ""
+pr "=== Nested function and closure ==="
+add5 = make_adder(5)
+pr "add5(20):", add5(20)
+
+add100 = make_adder(100)
+pr "add100(20):", add100(20)
+
+pr ""
+pr "=== Calling syntax: !!<...>!! vs parens ==="
+fn greet_user !!<title, name: "Guest">>!! ::
+    pr "Welcome, /#title /#name!"
+::
+
+greet_user !!<"Dr.", "Watson">>!!
+greet_user("Captain", "Nemo")
+greet_user("Traveler")
+

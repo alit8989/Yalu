@@ -1,0 +1,4 @@
+# Test invalid input error handling
+x = inp.int "Enter int: "
+pr "x is:", x
+

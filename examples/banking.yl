@@ -1,0 +1,52 @@
+<<"" ========================================================
+   Yalu v0.2 Example: Banking System
+   Demonstrating Classes, Methods, Place, and Conditionals
+   ======================================================== "">>
+
+class /BankAccount <
+    fn inti !!<yclass, owner:Anonymous:(str), initial_balance:0:(int), account_id:int>> ::
+        owner.BankAccount = owner
+        balance.BankAccount = initial_balance
+        id.BankAccount = account_id
+        is_active.BankAccount = Tr
+    ::
+
+    fn deposit !!<yclass, amount:(int)>> ::
+        if !!amount <= 0!! ::
+            pr "[Error] Deposit amount must be positive"
+            place Fl
+        ::
+        yclass>balance += amount
+        pr "[Success] Deposited /#amount. New balance: /#yclass>balance"
+        place Tr
+    ::
+
+    fn withdraw !!<yclass, amount:(int)>> ::
+        if !!amount > yclass>balance!! ::
+            pr "[Error] Insufficient funds! Current balance: /#yclass>balance, attempted: /#amount"
+            place Fl
+        ::
+        yclass>balance -= amount
+        pr "[Success] Withdrew /#amount. Remaining balance: /#yclass>balance"
+        place Tr
+    ::
+
+    fn yalupr !!<>>!! ::
+        place fullclass
+    ::
+>
+
+acc = /BankAccount("Alice Smith", 500, 1001)
+
+pr "--- Initial Account Info ---"
+pr acc
+
+pr "--- Performing Transactions ---"
+acc>deposit(250)
+acc>withdraw(100)
+acc>withdraw(1000)
+
+pr "--- Final Account Status ---"
+pr "Owner:   /#acc>owner"
+pr "Balance: /#acc>balance"
+pr "ID:      /#acc>id"

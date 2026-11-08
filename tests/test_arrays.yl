@@ -1,0 +1,12 @@
+<<"" Test 16: Array Operations and Builtin Helpers "">>
+arr = [1, 2, 3]
+pr "initial length:", len(arr)
+push(arr, 40)
+pr "pushed length:", len(arr)
+pr "element at index 3:", arr[3]
+arr[0] = 999
+pr "first element updated:", arr[0]
+popped = pop(arr)
+pr "popped element:", popped
+pr "final length:", len(arr)
+

@@ -1,0 +1,4 @@
+<<"" Test 14: Division By Zero Error "">>
+x = 100 / 0
+pr x
+

@@ -1,0 +1,16 @@
+<<"" YaluFast — Fast algorithms and performance helpers "">>
+
+fn fast_square !!<n>!! ::
+    place n * n
+::
+
+fn fast_max !!<a, b>!! ::
+    if !!a > b!! ::
+        place a
+    <<""else"">>
+        place b
+    ::
+::
+
+yalufast_ready = Tr
+

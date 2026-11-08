@@ -1,0 +1,9 @@
+# Test input functions
+s = inp.str "Enter string: "
+i = inp.int "Enter integer: "
+f = inp.flo "Enter float: "
+
+pr "Got string:", s
+pr "Got integer:", i
+pr "Got float:", f
+pr "Types:", type(s, i, f)

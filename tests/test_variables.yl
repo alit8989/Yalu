@@ -1,0 +1,18 @@
+<<"" Test 02: Variable Declarations, Reassignment, and Dynamic Typing "">>
+x = 100
+pr "x initial:", x
+
+x = "now a string"
+pr "x reassigned:", x
+
+x = 45.67
+pr "x float:", x
+
+x = Tr
+pr "x boolean:", x
+
+a = 10
+b = 20
+c = a + b
+pr "sum c:", c
+

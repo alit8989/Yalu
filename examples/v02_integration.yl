@@ -1,0 +1,44 @@
+<<"" Yalu v0.2 Comprehensive Integration Example "">>
+
+use [./framework1]
+use [yalufast]
+
+class /Point <
+    fn inti !!<yclass, name:user:(str), age:18:(int), id:int>> ::
+        name.Point = name
+        age.Point = age
+        id.Point = id
+    ::
+    fn yalupr !!<>>!! ::
+        place fullclass
+    ::
+>
+
+fn get_id !!<>>!! ::
+    place 100
+::
+
+object1 = /Point("ali", 45, get_id())
+
+pr object1>name
+pr object1>age
+pr object1>id
+
+object1>age = 50
+
+pr object1
+
+i = 0
+
+if !!i < 3!! ::
+    pr i-5
+::
+
+if !!i > 10!! ::
+    pr i+4
+:ei !!i > 4!! ::
+    pr i+2
+<<""else"">>
+    pr "else"
+::
+

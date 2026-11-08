@@ -1,0 +1,4 @@
+<<"" Test 15: Invalid Types Error "">>
+x = "text" - 5
+pr x
+

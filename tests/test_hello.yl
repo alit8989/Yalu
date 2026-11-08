@@ -1,0 +1,7 @@
+<<"" Test 01: Hello World and Basic Output "">>
+pr "Hello, World!"
+pr 42
+pr 3.14159
+pr Tr
+pr Fl
+

@@ -1,0 +1,39 @@
+# Compiled binaries
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.o
+*.obj
+*.res
+
+# Debug & Symbol files
+*.pdb
+*.ilk
+*.log
+
+# Build & Output directories
+build/
+bin/
+cmake-build-*/
+dist/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary & Scratch files
+*.tmp
+*.bak
+Development/
+Binaries/
+

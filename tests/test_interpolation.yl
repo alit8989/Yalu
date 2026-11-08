@@ -1,0 +1,14 @@
+<<"" Test 06: String Interpolation Syntax (/#var) "">>
+user = "Alice"
+score = 98
+grade = "A+"
+
+msg = "Player /#user scored /#score points (Grade: /#grade)."
+pr msg
+
+count = 0
+lp !!count < 3!! ::
+    pr "iteration: /#count"
+    count += 1
+::
+

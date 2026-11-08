@@ -1,0 +1,38 @@
+<<"" Test Yalu v0.2 Conditionals "">>
+
+<<"" 1. Basic if "">>
+i = 0
+if !!i < 3!! ::
+    pr "basic if passed"
+::
+
+<<"" 2. If / Else-if "">>
+val = 15
+if !!val < 10!! ::
+    pr "branch 1"
+:ei !!val > 20!! ::
+    pr "branch 2"
+:ei !!val == 15!! ::
+    pr "branch 3 (match)"
+::
+
+<<"" 3. If / Else-if / Else with else marker "">>
+x = 2
+if !!x > 10!! ::
+    pr x+4
+:ei !!x > 4!! ::
+    pr x+2
+<<""else"">>
+    pr "else branch taken"
+::
+
+<<"" 4. Nested conditionals "">>
+a = 10
+b = 20
+if !!a == 10!! ::
+    if !!b == 20!! ::
+        pr "nested condition passed"
+    <<""else"">>
+        pr "nested failed"
+    ::
+::

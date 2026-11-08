@@ -1,0 +1,43 @@
+<<"" Test place function return mechanism "">>
+
+fn add !!<a, b>!! ::
+    place a + b
+::
+
+res1 = add(10, 20)
+pr "add result: /#res1"
+
+fn check_early_return !!<x>!! ::
+    if !!x > 10!! ::
+        place "greater than 10"
+    ::
+    place "less or equal 10"
+::
+
+r1 = check_early_return(25)
+pr "check 25: /#r1"
+r2 = check_early_return(5)
+pr "check 5: /#r2"
+
+fn return_nested !!<n>!! ::
+    if !!n == 1!! ::
+        place 100
+    :ei !!n == 2!! ::
+        place 200
+    <<""else"">>
+        place 300
+    ::
+::
+
+n1 = return_nested(1)
+pr "nested 1: /#n1"
+n2 = return_nested(2)
+pr "nested 2: /#n2"
+n3 = return_nested(3)
+pr "nested 3: /#n3"
+
+fn no_return !!<>>!! ::
+    x = 42
+::
+nr = no_return()
+pr "no return: /#nr"

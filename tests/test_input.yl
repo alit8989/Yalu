@@ -1,0 +1,6 @@
+<<"" Test 11: Standard Input (inp.int, inp.str) "">>
+num = inp.int "Enter integer:"
+text = inp.str "Enter string:"
+pr "Read num:", num
+pr "Read text:", text
+

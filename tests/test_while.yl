@@ -1,0 +1,30 @@
+<<"" Test 07: While Loops, Break, and Continue "">>
+i = 0
+sum = 0
+
+lp !!i <= 5!! ::
+    sum += i
+    i += 1
+::
+pr "sum 0..5:", sum
+
+pr "testing break:"
+j = 0
+lp !!j < 10!! ::
+    if !!j == 4!! ::
+        bk
+    ::
+    pr "j: /#j"
+    j += 1
+::
+
+pr "testing continue:"
+k = 0
+lp !!k < 6!! ::
+    k += 1
+    if !!k == 3!! ::
+        cn
+    ::
+    pr "k: /#k"
+::
+

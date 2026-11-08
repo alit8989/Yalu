@@ -1,0 +1,11 @@
+<<"" Helper module for module test "">>
+
+mod_init_counter = 0
+
+fn helper_compute !!<x, y>!! ::
+    place (x * y) + 10
+::
+
+helper_global_msg = "Hello from helper module"
+mod_init_counter += 1
+

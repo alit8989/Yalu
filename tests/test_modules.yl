@@ -1,0 +1,13 @@
+<<"" Test Yalu v0.2 Module System "">>
+
+use [./test_mod_helper]
+
+pr helper_global_msg
+ans = helper_compute(5, 4)
+pr "helper_compute result: /#ans"
+pr "init counter: /#mod_init_counter"
+
+<<"" Re-importing should use cached module without re-executing "">>
+use [./test_mod_helper]
+pr "init counter after re-import: /#mod_init_counter"
+

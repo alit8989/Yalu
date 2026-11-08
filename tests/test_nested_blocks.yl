@@ -1,0 +1,22 @@
+<<"" Test 10: Nested Blocks and Lexical Scope "">>
+global_var = 100
+
+fn test_scope !!<param_var>>!! ::
+    fn_local = 200
+    pr "fn scope:", global_var, param_var, fn_local
+
+    if !!param_var > 0!! ::
+        if_local = 300
+        pr "if scope:", global_var, param_var, fn_local, if_local
+
+        fr !!loop_var in 1@2!! ::
+            loop_local = 400 + loop_var
+            pr "loop scope:", global_var, param_var, fn_local, if_local, loop_var, loop_local
+        ::
+    ::
+
+    pr "fn scope after blocks:", fn_local
+::
+
+test_scope(50)
+pr "global scope:", global_var

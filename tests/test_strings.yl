@@ -1,0 +1,16 @@
+<<"" Test 04: String Operations, Multiline Strings, Concatenation "">>
+s1 = "Hello"
+s2 = "Yalu"
+s3 = s1 + ", " + s2 + "!"
+pr s3
+
+multiline = ""
+First line
+Second line
+Third line""
+pr multiline
+
+pr "length of s3:", len(s3)
+pr "char at 0:", s3[0]
+pr "char at 7:", s3[7]
+

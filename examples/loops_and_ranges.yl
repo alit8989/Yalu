@@ -1,0 +1,46 @@
+<<"" ========================================================
+   Yalu Example: Loops, Ranges, and Control Flow
+   Demonstrating lp (while), fr (for), ranges (@), bk, cn
+   ======================================================== "">>
+
+pr "=== 1. While Loop with Condition ==="
+counter = 1
+lp !!counter <= 4!! ::
+    pr "Counter: /#counter"
+    counter += 1
+::
+
+pr ""
+pr "=== 2. For Loop with Standard Range (1@5 inclusive) ==="
+fr !!i in 1@5!! ::
+    square = i * i
+    pr "/#i squared is /#square"
+::
+
+pr ""
+pr "=== 3. For Loop with Step (0@20@5) ==="
+fr !!val in 0@20@5!! ::
+    pr "Step value: /#val"
+::
+
+pr ""
+pr "=== 4. Downward Range (5@1) ==="
+fr !!countdown in 5@1!! ::
+    pr "T-minus: /#countdown"
+::
+pr "Blast off!"
+
+pr ""
+pr "=== 5. Break and Continue ==="
+pr "Printing odd numbers between 1 and 10:"
+fr !!n in 1@10!! ::
+    if !!n % 2 == 0!! ::
+        cn
+    ::
+    if !!n > 7!! ::
+        pr "Stopping early at /#n"
+        bk
+    ::
+    pr "Odd: /#n"
+::
+

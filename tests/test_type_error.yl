@@ -1,0 +1,11 @@
+class /Point <
+    fn inti !!<yclass, name:user:(str), age:18:(int), id:int>> ::
+        name.Point = name
+        age.Point = age
+        id.Point = id
+    ::
+>
+
+<<"" Pass integer where string is expected "">>
+p = /Point(123, 45, 100)
+

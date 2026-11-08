@@ -1,0 +1,5 @@
+<<"" Test 12: Invalid Syntax Error "">>
+lp condition_missing_bangs ::
+    pr "bad"
+::
+

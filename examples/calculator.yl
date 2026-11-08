@@ -1,0 +1,43 @@
+<<"" ========================================================
+   Yalu Example: Arithmetic Calculator
+   Demonstrating functions, conditionals, arithmetic, input
+   ======================================================== "">>
+
+fn add !!<a, b>>!! ::
+    rt a + b
+::
+
+fn sub !!<a, b>>!! ::
+    rt a - b
+::
+
+fn mul !!<a, b>>!! ::
+    rt a * b
+::
+
+fn div !!<a, b>>!! ::
+    if !!b == 0!! ::
+        pr "Error: division by zero is not allowed"
+        rt 0
+    ::
+    rt a / b
+::
+
+pr "--- Yalu Calculator ---"
+x = 24
+y = 6
+
+pr "Values: x = /#x, y = /#y"
+pr "Add: /#x + /#y =", add(x, y)
+pr "Sub: /#x - /#y =", sub(x, y)
+pr "Mul: /#x * /#y =", mul(x, y)
+pr "Div: /#x / /#y =", div(x, y)
+
+<<"" Test default parameter in calculation "">>
+fn scale !!<val, factor: 10>>!! ::
+    rt val * factor
+::
+
+pr "Scaled by default factor (10):", scale(5)
+pr "Scaled by custom factor (3):", scale(5, 3)
+

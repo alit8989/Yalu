@@ -1,0 +1,27 @@
+<<"" Test 09: User-Defined Functions, Return, Defaults, Recursion "">>
+fn square !!<x>>!! ::
+    rt x * x
+::
+
+pr "square(6):", square(6)
+
+fn power !!<base, exp: 2>>!! ::
+    res = 1
+    fr !!_ in 1@exp!! ::
+        res *= base
+    ::
+    rt res
+::
+
+pr "power(3):", power(3)
+pr "power(2, 5):", power(2, 5)
+
+fn fib !!<n>>!! ::
+    if !!n <= 1!! ::
+        rt n
+    ::
+    rt fib(n - 1) + fib(n - 2)
+::
+
+pr "fib(7):", fib(7)
+

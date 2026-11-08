@@ -1,0 +1,41 @@
+<<"" Test Recursion Protection for Objects "">>
+
+class /SelfRef <
+    fn inti !!<yclass, name:(str)>> ::
+        name.SelfRef = name
+    ::
+>
+
+s = /SelfRef("single")
+s>me = s
+pr "Self-referencing object:"
+pr s
+
+class /Node <
+    fn inti !!<yclass, val:(int)>> ::
+        val.Node = val
+    ::
+>
+
+nodeA = /Node(1)
+nodeB = /Node(2)
+nodeA>next = nodeB
+nodeB>prev = nodeA
+pr "Mutually-referencing objects:"
+pr nodeA
+
+class /YaluprLoop <
+    fn inti !!<yclass>> ::
+        ready.YaluprLoop = Tr
+    ::
+    fn yalupr !!<>>!! ::
+        pr "inside yalupr"
+        pr yclass
+        place "done"
+    ::
+>
+
+loop_obj = /YaluprLoop()
+pr "Calling yalupr that prints yclass:"
+pr loop_obj
+

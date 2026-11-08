@@ -1,0 +1,38 @@
+<<"" comments "">>
+<<"" I/O "">>
+<<"" variables "">>
+<<"" print "">>
+
+string = "hello world"
+
+longstring = ""
+Hello world in long""
+
+bool = Tr
+bool2 = Fl
+
+pr string
+pr 123
+pr "variable: /#string"
+pr "booleans: /#bool and /#bool2"
+pr longstring
+
+i = 0
+lp !!i < 3!! ::
+    pr "i: /#i"
+    i += 1
+::
+
+fr !!j in 1@5!! ::
+    pr "for loop j: /#j"
+::
+
+fn greet !!<msg: "Default", times: 2>>!! ::
+    fr !!k in 1@times!! ::
+        pr "Greeting #/#k: /#msg"
+    ::
+::
+
+greet !!<"Welcome to Yalu", 2>>!!
+greet("Calling with parens", 1)
+

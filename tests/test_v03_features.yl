@@ -1,0 +1,103 @@
+# Test V0.3 Language Features
+
+pr "--- 1. List Creation & Nested Indexing ---"
+list = [1, 2, 3, [10, 30]]
+pr list[0]
+pr list[1]
+pr list[3][0]
+pr list[3][1]
+
+pr "--- 2. List Methods ---"
+list2 = [1, 45, "Ali"]
+list2>>inc("NewItem")
+pr list2[3]
+pr list2>>haveit("Ali")
+pr list2>>haveit(999)
+list2>>rep("Ali", "Sara")
+pr list2>>haveit("Ali")
+pr list2>>haveit("Sara")
+list2>>rem(45)
+pr list2[1]
+
+pr "--- 3. Book Creation with .. and <> ---"
+book1 = {
+    name .. ali,
+    age .. 18,
+    id<>id2 .. 1999992<>7,
+}
+pr book1>name
+pr book1>age
+pr book1>id
+pr book1>id2
+
+pr "--- 4. Book Keys & Values Listing ---"
+book = {
+    "name" .. "ali"
+    "country" .. "IR"
+    "list1" .. ["Ali", 3]<>[44, "44"]
+}
+pr book>vals
+pr book>keys
+
+pr "--- 5. Book Nested Indexing ---"
+pr book>val[2][0]
+pr book>key[0][0]
+
+pr "--- 6. Book Reverse Lookup ---"
+pr book>ali
+
+pr "--- 7. Book Methods ---"
+book>>add("ID" .. 233333)
+pr book>ID
+book>>edval("name", "NAME")
+pr book>name
+book>>edkey("NAME", "fullName")
+pr book>fullName
+
+pr "--- 8. For Range with Variable ---"
+ali = 4
+fr !!i in 1@ali!! ::
+    pr i
+::
+
+pr "--- 9. For Loop Iteration over Collection ---"
+my_list = ["apple", "banana", "cherry"]
+fr !!item in my_list!! ::
+    pr item
+::
+
+pr "--- 10. String Iteration with Separators ---"
+fr !!ch in "hello", j = ","!! ::
+    pr ch
+::
+
+fr !!ch in "xyz", j = ",.NL"!! ::
+    pr ch
+::
+
+pr "--- 11. Comparison Operators ---"
+pr 10 >- 5
+pr 3 <- 8
+pr 5 >= 5
+pr 4 <= 10
+pr 5 N! 6
+pr 7 == 7
+
+pr "--- 12. Type Inspection ---"
+str_val = "hello"
+int_val = 42
+flt_val = 3.14
+pr type(str_val)
+pr type(int_val)
+pr type(flt_val)
+pr type(list)
+pr type(book)
+pr type(str_val, int_val, flt_val, book>fullName)
+
+pr "--- 13. Chained Nested Index Assignment ---"
+nested_list = [1, 2, [100, 200]]
+nested_list[2][0] = 999
+pr nested_list[2][0]
+
+pr "V0.3 Features Completed Successfully!"
+

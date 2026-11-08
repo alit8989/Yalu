@@ -1,0 +1,17 @@
+<<"" Test 03: Integer Arithmetic and Operator Precedence "">>
+a = 15
+b = 4
+
+pr "add:", a + b
+pr "sub:", a - b
+pr "mul:", a * b
+pr "div:", a / b
+pr "mod:", a % b
+
+pr "precedence 1:", 2 + 3 * 4
+pr "precedence 2:", (2 + 3) * 4
+pr "precedence 3:", 10 - 2 - 1
+a += 5
+pr "compound add:", a
+pr "a after compound:", a
+

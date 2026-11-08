@@ -1,0 +1,41 @@
+<<"" ========================================================
+   Yalu Example: Fibonacci Numbers
+   Demonstrating recursion vs iterative loops
+   ======================================================== "">>
+
+fn fib_recursive !!<n>>!! ::
+    if !!n <= 0!! ::
+        rt 0
+    ::
+    if !!n == 1!! ::
+        rt 1
+    ::
+    rt fib_recursive(n - 1) + fib_recursive(n - 2)
+::
+
+fn fib_iterative !!<n>>!! ::
+    if !!n <= 0!! ::
+        rt 0
+    ::
+    if !!n == 1!! ::
+        rt 1
+    ::
+    prev = 0
+    curr = 1
+    fr !!_ in 2@n!! ::
+        next = prev + curr
+        prev = curr
+        curr = next
+    ::
+    rt curr
+::
+
+pr "First 10 Fibonacci Numbers (Recursive):"
+fr !!i in 1@10!! ::
+    f = fib_recursive(i)
+    pr "Fib(/#i) = /#f"
+::
+
+pr ""
+pr "Fibonacci 20 (Iterative):", fib_iterative(20)
+

@@ -1,0 +1,58 @@
+name: Yalu CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-windows:
+    name: Build & Test (Windows x64)
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup LLVM / Clang
+        uses: KyleMayes/install-llvm-action@v2
+        with:
+          version: "18"
+
+      - name: Compile and Run Tests via build.bat
+        shell: cmd
+        run: |
+          build.bat
+
+      - name: Run PowerShell Test Suite
+        shell: pwsh
+        run: |
+          powershell -ExecutionPolicy Bypass -File tests/run_all.ps1
+
+  build-linux:
+    name: Build & Test (Ubuntu x64)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Compiler Toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang cmake
+
+      - name: Configure CMake
+        run: |
+          cmake -B build -S . -DCMAKE_C_COMPILER=clang
+
+      - name: Build Yalu
+        run: |
+          cmake --build build --config Release
+
+      - name: Verify Version Output
+        run: |
+          ./build/yalu --version
+          ./build/yalu --help
+

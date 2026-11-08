@@ -1,0 +1,23 @@
+<<"" Test 05: Boolean Literals and Logical Expressions "">>
+t = Tr
+f = Fl
+
+pr "t:", t
+pr "f:", f
+
+pr "and test 1:", t and f
+pr "and test 2:", t and Tr
+pr "or test 1:",  t or f
+pr "or test 2:",  f or Fl
+pr "not test 1:", not t
+pr "not test 2:", not f
+
+pr "symbols &&:", t && Tr
+pr "symbols ||:", f || t
+pr "symbols !:",  !t
+
+pr "equality:", 10 == 10
+pr "inequality:", 10 != 5
+pr "greater:", 10 > 5
+pr "less eq:", 5 <= 5
+

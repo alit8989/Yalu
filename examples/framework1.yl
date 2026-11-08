@@ -1,0 +1,21 @@
+<<"" Framework 1 — Module providing math and string utilities "">>
+
+fn framework_banner !!<>>!! ::
+    pr "Framework 1 initialized successfully"
+::
+
+fn double_val !!<x>!! ::
+    place x * 2
+::
+
+class /Helper <
+    fn inti !!<yclass, tag:default:(str)>> ::
+        tag.Helper = tag
+    ::
+    fn get_tag !!<yclass>>!! ::
+        place yclass>tag
+    ::
+>
+
+framework_version = "1.0.0"
+

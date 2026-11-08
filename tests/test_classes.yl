@@ -1,0 +1,31 @@
+<<"" Test Yalu v0.2 Class System "">>
+
+class /Point <
+    fn inti !!<yclass, name:user:(str), age:18:(int), id:int>> ::
+        name.Point = name
+        age.Point = age
+        id.Point = id
+    ::
+    fn yalupr !!<>>!! ::
+        place fullclass
+    ::
+>
+
+<<"" Instantiate class "">>
+object1 = /Point("ali", 45, 100)
+
+pr "Property name: /#object1>name"
+pr "Property age: /#object1>age"
+pr "Property id: /#object1>id"
+
+<<"" Modify property "">>
+object1>age = 50
+pr "Modified age: /#object1>age"
+
+<<"" Object representation via yalupr "">>
+pr object1
+
+<<"" Test default values "">>
+object2 = /Point("bob", 20, 200)
+pr object2
+

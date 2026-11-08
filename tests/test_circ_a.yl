@@ -1,0 +1,3 @@
+use [./test_circ_b]
+a_val = 1
+
